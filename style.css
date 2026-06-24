@@ -21,14 +21,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: rgba(17, 24, 39, 0.85); /* Fond sombre transparent */
-  backdrop-filter: blur(8px); /* Effet flouté sous la barre */
-  position: fixed; /* Reste en haut sans bouger */
-  width: 100%;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(8px);
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50%; /* Centre le bloc par rapport à l'écran */
+  transform: translateX(-50%); /* Aligne parfaitement le centre */
+  width: 100%;
+  max-width: 1200px; /* ◄ Limite la largeur pour rapprocher les éléments */
   z-index: 1000;
 }
+
 
 /* Rectangle noir gauche */
 .logo {
