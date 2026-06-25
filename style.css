@@ -163,3 +163,17 @@ p {
   font-size: 2rem;     /* Rend le logo Windows/Android/Switch légèrement plus grand */
 }
 
+/* Alignement global du lien contenant l'image et le texte */
+.download-section a {
+  display: flex;
+  align-items: center; /* Centre verticalement le logo avec le texte */
+  text-decoration: none;
+}
+
+/* Gestion de la taille et de l'espacement de vos logos PNG */
+.download-icon {
+  width: 40px;         /* Ajustez cette valeur pour agrandir ou rétrécir vos logos */
+  height: auto;        /* Conserve les proportions d'origine de l'image */
+  margin-right: 20px;  /* Crée l'espace entre le logo et le début du texte */
+  object-fit: contain; /* Évite que l'image ne soit déformée */
+}
