@@ -429,28 +429,31 @@ p, .features {
   text-decoration: underline;
 }
 
-/* Style pour l'espace contenant les boutons */
-
-
+/* Conteneur des boutons */
 .social-buttons {
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
 }
 
+/* On nettoie complètement les liens (pas de fond, pas de bordure) */
 .social-buttons a {
   display: inline-block;
-  margin: 0 15px;
-  transition: transform 0.2s ease; /* Petit effet au survol */
+  margin: 0 20px;
+  background: none !important;    /* Supprime le fond bleu ou rouge */
+  padding: 0 !important;          /* Supprime les espaces internes */
+  border-radius: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
-/* Effet d'agrandissement léger quand on passe la souris dessus */
+/* Effet au survol */
 .social-buttons a:hover {
-  transform: scale(1.1);
+  transform: scale(1.15); /* Légère animation d'agrandissement */
 }
 
-/* Taille de tes logos */
+/* Taille augmentée pour les logos */
 .social-icon {
-  height: 40px;
+  height: 60px; /* Augmenté de 40px à 60px pour qu'ils soient plus gros */
   width: auto;
   display: block;
 }
