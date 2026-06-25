@@ -151,3 +151,15 @@ p {
 .download-section a.lnk-switch:hover {
   color: #e60012; 
 }
+
+/* Ajustement d'alignement pour les icônes avec votre police custom */
+.download-section a {
+  display: flex;
+  align-items: center; /* Aligne l'icône parfaitement au milieu de la hauteur du texte */
+}
+
+.download-section a i {
+  margin-right: 20px;  /* Augmente l'espace entre le logo et le texte */
+  font-size: 2rem;     /* Rend le logo Windows/Android/Switch légèrement plus grand */
+}
+
