@@ -127,3 +127,52 @@ p {
   color: #3b82f6;           /* Change de couleur au survol (ici en bleu clair) */
   padding-left: 10px;       /* Petit effet de décalage vers la droite très sympa */
 }
+
+
+/* 📥 BLOC DE TÉLÉCHARGEMENT */
+.download-section {
+  display: flex;
+  flex-direction: column;   
+  align-items: flex-start;  
+  gap: 25px;                
+  margin-top: 40px;         
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+/* Style de base des gros liens */
+.download-section a {
+  color: #ffffff;           
+  text-decoration: none;    
+  font-size: 1.8rem;        
+  font-weight: bold;        
+  transition: color 0.2s, padding-left 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+/* Espace entre l'icône et le texte */
+.download-section a i {
+  margin-right: 15px;
+  width: 40px; /* Aligne verticalement le début du texte de chaque ligne */
+  text-align: center;
+}
+
+/* Effet de décalage global au survol */
+.download-section a:hover {
+  padding-left: 12px;       
+}
+
+/* Couleurs spécifiques au survol pour chaque plateforme */
+.download-section a.lnk-windows:hover {
+  color: #0078d4; /* Bleu Windows */
+}
+
+.download-section a.lnk-android:hover {
+  color: #3ddc84; /* Vert Android */
+}
+
+.download-section a.lnk-switch:hover {
+  color: #e60012; /* Rouge Switch */
+}
+
