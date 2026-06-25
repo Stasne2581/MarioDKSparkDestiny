@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden; /* Sécurité anti-débordement pour les animations */
 }
 
 /* HEADER (La barre prend 100% de la largeur de l'écran et centre son contenu) */
@@ -36,6 +37,9 @@ header {
   backdrop-filter: blur(8px);
   z-index: 1000;
   box-sizing: border-box;
+  
+  /* 🎬 Animation d'apparition du header depuis le haut */
+  animation: slideFromTop 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* Rectangle noir gauche */
@@ -59,13 +63,14 @@ nav a {
   text-decoration: none;
   padding: 8px 12px;       
   border-radius: 6px;
-  transition: 0.2s;
+  transition: background 0.2s, transform 0.2s;
   font-weight: 600; 
   font-size: 1rem;         
 }
 
 nav a:hover {
   background: rgba(255, 255, 255, 0.15); 
+  transform: scale(1.05); /* Petit effet de gonflement dynamique au survol */
 }
 
 /* CONTENU PRINCIPAL */
@@ -78,15 +83,19 @@ nav a:hover {
   max-width: 1000px; 
   width: 90%;
   
-  /* Marge augmentée à 360px pour laisser toute la place au très gros logo */
-  margin: 360px auto 60px auto; 
+  /* ◄ MARGE AUGMENTÉE (480px) : Descend considérablement le bloc pour accueillir le logo géant */
+  margin: 480px auto 60px auto; 
   text-align: center; 
-  position: relative; /* Nécessaire pour placer le logo au-dessus */
+  position: relative; 
   
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  
+  /* 🎬 Animation d'apparition de la boîte (fondu + montée fluide) */
+  opacity: 0;
+  animation: containerFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
 }
 
-/* LOGO DU JEU AGRANDI AVEC ANIMATIONS FLUIDES */
+/* LOGO DU JEU VRAIMENT GIGANTESQUE AVEC ANIMATIONS FLUIDES */
 .container::before {
   content: "";
   display: block;
@@ -95,45 +104,24 @@ nav a:hover {
   background-repeat: no-repeat;
   background-position: center;
   
-  /* Taille beaucoup plus grande */
-  width: 650px;       
-  height: 200px;      
-  max-width: 95%;     /* Évite les débordements sur petits écrans */
+  /* ◄ TAILLE VRAIMENT GIGANTESQUE */
+  width: 850px;       
+  height: 280px;      
+  max-width: 98%;     
   
   /* Positionnement volant au-dessus */
   position: absolute;
-  top: -220px;        
+  top: -320px;        /* Ajusté pour flotter à la perfection au-dessus */
   left: 50%;
   transform: translateX(-50%);
   
-  /* Animations combinées (Apparition + Flottement infini) */
+  /* Animations combinées (Apparition rapide + Flottement infini) */
   animation: 
-    logoFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards,
-    levitate 4s ease-in-out infinite alternate;
+    logoPopIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    levitate 5s ease-in-out infinite alternate;
 }
 
-/* Définition de l'animation de flottement vertical */
-@keyframes levitate {
-  0% {
-    transform: translateX(-50%) translateY(0px);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-12px); /* Monte doucement de 12px */
-  }
-}
-
-/* Définition de l'animation d'apparition en fondu flouté au chargement */
-@keyframes logoFadeIn {
-  0% {
-    opacity: 0;
-    filter: blur(5px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-}
-
+/* ELEMENTS INTERNES DU CONTENEUR ANIMÉS */
 h1 {
   font-size: 3rem; 
   margin-bottom: 25px;
@@ -141,16 +129,22 @@ h1 {
   padding-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  
+  /* Animation du titre */
+  opacity: 0;
+  animation: contentReveal 0.6s ease-out 0.8s forwards;
 }
 
-p {
-  opacity: 0.9;
+p, .features {
+  opacity: 0;
   line-height: 1.8;
   font-size: 1.3rem; 
   margin-bottom: 20px;
+  
+  /* Animation des paragraphes (apparaissent juste après le titre) */
+  animation: contentReveal 0.6s ease-out 1s forwards;
 }
 
-/* Style spécifique pour la ligne des fonctionnalités */
 .features {
   margin-top: 15px; 
   font-size: 1.25rem; 
@@ -165,6 +159,10 @@ p {
   margin-top: 40px;         
   padding-top: 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  
+  /* Animation de la zone de téléchargement */
+  opacity: 0;
+  animation: contentReveal 0.6s ease-out 1.2s forwards;
 }
 
 .download-section a {
@@ -172,30 +170,83 @@ p {
   text-decoration: none;    
   font-size: 1.8rem;        
   font-weight: bold;        
-  transition: color 0.2s, padding-left 0.2s;
+  transition: color 0.2s, padding-left 0.2s, transform 0.2s;
   display: flex;
   align-items: center;      
 }
 
+/* Effets de survol sur les boutons de téléchargement */
 .download-section a:hover {
-  padding-left: 12px;       
+  padding-left: 15px;       
+  transform: scale(1.02); /* Léger effet d'impact au survol */
 }
 
-.download-section a.lnk-windows:hover {
-  color: #017ce3;           
-}
-
-.download-section a.lnk-android:hover {
-  color: #98cb00;           
-}
-
-.download-section a.lnk-switch:hover {
-  color: #ff0001;           
-}
+.download-section a.lnk-windows:hover { color: #017ce3; }
+.download-section a.lnk-android:hover { color: #98cb00; }
+.download-section a.lnk-switch:hover  { color: #ff0001; }
 
 .download-icon {
   width: 40px;              
   height: auto;        
   margin-right: 20px;       
   object-fit: contain; 
+}
+
+
+/* ==========================================================================
+   🎬 DÉFINITIONS DES ANIMATIONS (KEYFRAMES)
+   ========================================================================== */
+
+/* 1. Descente fluide du header au chargement */
+@keyframes slideFromTop {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+/* 2. Entrée dynamique et percutante du logo géant */
+@keyframes logoPopIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.7);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* 3. Flottement vertical très doux style écran titre de jeu vidéo */
+@keyframes levitate {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-15px); /* Oscille de 15px */
+  }
+}
+
+/* 4. Apparition en fondu et montée de la boîte centrale */
+@keyframes containerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 5. Révélation progressive des textes internes */
+@keyframes contentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
