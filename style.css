@@ -1,23 +1,22 @@
 /* 1. Déclaration de votre police personnalisée */
 @font-face {
-  font-family: 'MonProjetFont'; /* Le nom que vous donnez à votre police */
-  src: url('fonts/font.otf') format('opentype'); /* Chemin vers votre fichier */
+  font-family: 'MonProjetFont';
+  src: url('fonts/font.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: 'MonProjetFont', Arial, sans-serif; /* ◄ Votre police est appliquée ici */
+  font-family: 'MonProjetFont', Arial, sans-serif;
   color: white;
   
   /* Image de fond fixe qui prend tout l'écran */
-  background-image: url('votre-image-de-fond.png'); 
+  background-image: url('votre-image-de-fond.png'); /* ◄ REMPLACEZ PAR VOTRE IMAGE */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   
-  /* Pour aligner tout le contenu proprement au centre */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -28,16 +27,15 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;             /* Fait toute la longueur de l'écran */
+  width: 100%;             
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;      /* Espace sur les côtés pour ne pas coller aux bords de l'écran */
+  padding: 15px 60px;      
   background: rgba(17, 24, 39, 0.85);
   backdrop-filter: blur(8px);
   z-index: 1000;
 }
-
 
 /* Rectangle noir gauche */
 .logo {
@@ -108,9 +106,9 @@ p {
 /* 📥 BLOC DE TÉLÉCHARGEMENT */
 .download-section {
   display: flex;
-  flex-direction: column;   
-  align-items: flex-start;  
-  gap: 25px;                
+  flex-direction: column;   /* Aligne les liens en colonne */
+  align-items: flex-start;  /* Force l'alignement sur le côté GAUCHE */
+  gap: 25px;                /* Espace vertical entre chaque ligne */
   margin-top: 40px;         
   padding-top: 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.1); 
@@ -124,14 +122,7 @@ p {
   font-weight: bold;        
   transition: color 0.2s, padding-left 0.2s;
   display: flex;
-  align-items: center;
-}
-
-/* Alignement et taille des icônes de logos */
-.download-section a i {
-  margin-right: 15px;
-  width: 40px;              
-  text-align: center;
+  align-items: center;      /* Centre verticalement le logo avec le texte */
 }
 
 /* Effet global au survol */
@@ -152,28 +143,10 @@ p {
   color: #e60012; 
 }
 
-/* Ajustement d'alignement pour les icônes avec votre police custom */
-.download-section a {
-  display: flex;
-  align-items: center; /* Aligne l'icône parfaitement au milieu de la hauteur du texte */
-}
-
-.download-section a i {
-  margin-right: 20px;  /* Augmente l'espace entre le logo et le texte */
-  font-size: 2rem;     /* Rend le logo Windows/Android/Switch légèrement plus grand */
-}
-
-/* Alignement global du lien contenant l'image et le texte */
-.download-section a {
-  display: flex;
-  align-items: center; /* Centre verticalement le logo avec le texte */
-  text-decoration: none;
-}
-
 /* Gestion de la taille et de l'espacement de vos logos PNG */
 .download-icon {
-  width: 40px;         /* Ajustez cette valeur pour agrandir ou rétrécir vos logos */
-  height: auto;        /* Conserve les proportions d'origine de l'image */
-  margin-right: 20px;  /* Crée l'espace entre le logo et le début du texte */
-  object-fit: contain; /* Évite que l'image ne soit déformée */
+  width: 40px;         /* Taille des logos de plateformes */
+  height: auto;        
+  margin-right: 20px;  /* Espace entre le logo et le texte */
+  object-fit: contain; 
 }
