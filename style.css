@@ -366,3 +366,66 @@ p, .features {
 .features-box strong {
   color: #ffcc00; /* Met le mot "Features:" en jaune doré style Mario */
 }
+
+
+/* ==========================================================================
+   📥 OPTIMISATIONS DE LA PAGE DOWNLOAD
+   ========================================================================== */
+
+.download-intro {
+  margin-bottom: 40px !important;
+}
+
+/* Badge "Free Game" style rétro */
+.download-badge {
+  display: inline-block;
+  background: #ffcc00;
+  color: #000000;
+  padding: 6px 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+/* Structure interne des boutons pour empiler les textes */
+.btn-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Texte principal (Gros) */
+.btn-main-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Sous-texte (Petit, discret et informatif) */
+.btn-sub-text {
+  font-size: 1rem;
+  font-family: Arial, sans-serif; /* Plus lisible pour les petits détails */
+  opacity: 0.6;
+  font-weight: normal;
+  margin-top: 4px;
+  color: #ffffff !important; /* Reste blanc même si le titre change de couleur */
+}
+
+/* Note de bas de page */
+.download-footer {
+  margin-top: 40px !important;
+  font-size: 1.1rem !important;
+  opacity: 0.7;
+}
+
+.download-footer a {
+  color: #017ce3;
+  text-decoration: none;
+}
+.download-footer a:hover {
+  text-decoration: underline;
+}
+
