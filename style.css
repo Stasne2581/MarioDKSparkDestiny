@@ -132,15 +132,15 @@ p {
 
 /* Couleurs uniques au survol pour chaque plateforme */
 .download-section a.lnk-windows:hover {
-  color: #0078d4; 
+  color: #017ce3;           /* ◄ Votre bleu Windows personnalisé */
 }
 
 .download-section a.lnk-android:hover {
-  color: #3ddc84; 
+  color: #98cb00;           /* ◄ Votre vert Android personnalisé */
 }
 
 .download-section a.lnk-switch:hover {
-  color: #e60012; 
+  color: #ff0001;           /* ◄ Votre rouge Switch personnalisé */
 }
 
 /* Gestion de la taille et de l'espacement de vos logos PNG */
