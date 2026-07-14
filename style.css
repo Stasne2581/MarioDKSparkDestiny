@@ -489,12 +489,12 @@ p, .features {
 
 
 /* ==========================================================================
-   ❓ PAGE FAQ
+   ❓ PAGE FAQ (TEXTE ALIGNÉ À GAUCHE)
    ========================================================================== */
 
 .faq-container {
   margin-top: 30px;
-  text-align: left; /* Aligne les questions à gauche pour une lecture naturelle */
+  text-align: left !important; /* Aligne le bloc à gauche */
 }
 
 .faq-item {
@@ -503,6 +503,7 @@ p, .features {
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
+  text-align: left !important; /* Force le texte de la carte à gauche */
 }
 
 .faq-question {
@@ -510,10 +511,12 @@ p, .features {
   font-weight: bold;
   color: #ffcc00; /* Jaune doré style Mario */
   margin-bottom: 10px;
+  text-align: left !important;
 }
 
 .faq-answer {
   font-size: 1.2rem;
   line-height: 1.6;
   opacity: 0.9;
+  text-align: left !important;
 }
