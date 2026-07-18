@@ -67,9 +67,9 @@ header {
 }
 
 .header-logo {
-  height: 32px;       /* Légèrement réduit pour ne pas déformer les pixels */
-  width: auto;
-  object-fit: contain;
+  height: auto !important;   /* Annule la hauteur forcée qui déforme tout */
+  width: auto !important;    /* Laisse l'image utiliser sa vraie taille d'origine */
+  flex-shrink: 0;            /* Empêche absolument le header d'écraser l'image */
   display: block;
 }
 
