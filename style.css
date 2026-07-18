@@ -42,13 +42,43 @@ header {
   animation: slideFromTop 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* Rectangle noir gauche */
-.logo {
-  width: 120px;
-  height: 40px;
-  background: black;
-  border-radius: 6px;
-  margin: 15px 0; 
+/* ==========================================================================
+   👾 RENDU RETRO / PIXEL ART (SUPPRIME L'ANTI-ALIASING)
+   ========================================================================== */
+
+/* Désactive le lissage pour afficher les pixels bruts sur le logo géant, le mini logo et les réseaux */
+.container::before,
+.header-logo,
+.social-icon {
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering: -webkit-crisp-edges;      /* Safari */
+  image-rendering: pixelated;                /* Chrome, Edge, Opera */
+  image-rendering: crisp-edges;
+}
+
+/* ==========================================================================
+   🧱 LOGO ET TITRE DU HEADER (Remplace l'ancien rectangle noir .logo)
+   ========================================================================== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;          /* Écart entre le sprite et le texte */
+  margin: 10px 0;
+}
+
+.header-logo {
+  height: 40px;       /* Hauteur équivalente à l'ancien rectangle */
+  width: auto;
+  object-fit: contain;
+}
+
+.header-title {
+  color: white;
+  font-family: 'MonProjetFont', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Bloque le retour à la ligne pour garder le header propre */
 }
 
 /* Menu droite */
@@ -473,8 +503,6 @@ p, .features {
   filter: none !important;
   object-fit: contain;
 }
-
-
 
 /* Compensation précise des tailles de tes images sprites */
 .icon-discord {
