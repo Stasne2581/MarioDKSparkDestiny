@@ -70,10 +70,12 @@ header {
 }
 
 .header-logo {
-  height: 90px !important; /* ◄ On lui donne une hauteur fixe un peu plus grande... */
-  width: auto !important;
-  flex-shrink: 0;
-  display: block;
+  height: 24px !important;    /* Ajuste cette valeur (ex: 24px, 32px ou 48px) pour changer la taille */
+  width: auto !important;     /* Laisse la largeur se calculer proportionnellement */
+  flex-shrink: 0;             /* Empêche le header d'écraser l'image */
+  transform: none !important; /* On enlève le scale pour éviter les conflits */
+  margin: 0;                  /* Reset des marges pour repartir à zéro */
+}
   
   /* ◄ ...et on le réduit ici pour que ses pixels soient ultra nets et s'adaptent au header de 60px */
   transform: scale(0.45); 
