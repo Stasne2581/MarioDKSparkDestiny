@@ -57,28 +57,34 @@ header {
 }
 
 /* ==========================================================================
-   🧱 LOGO ET TITRE DU HEADER (Remplace l'ancien rectangle noir .logo)
+   🧱 LOGO ET TITRE DU HEADER (VERSION CORRIGÉE ET ALIGNÉE)
    ========================================================================== */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;          /* Écart entre le sprite et le texte */
-  margin: 10px 0;
+  gap: 10px;          /* Écart propre entre l'icône et le texte */
+  height: 100%;       /* Prend toute la hauteur disponible du header */
 }
 
 .header-logo {
-  height: 40px;       /* Hauteur équivalente à l'ancien rectangle */
+  height: 32px;       /* Légèrement réduit pour ne pas déformer les pixels */
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
 .header-title {
   color: white;
   font-family: 'MonProjetFont', Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;  /* Augmenté un poil pour que les pixels de la police restent lisibles */
   font-weight: bold;
   letter-spacing: 0.5px;
-  white-space: nowrap; /* Bloque le retour à la ligne pour garder le header propre */
+  white-space: nowrap;
+  
+  /* Ajustement magique pour aligner la police pixel avec l'icône */
+  display: inline-block;
+  line-height: 1;
+  transform: translateY(1px); 
 }
 
 /* Menu droite */
