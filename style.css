@@ -67,10 +67,16 @@ header {
 }
 
 .header-logo {
-  height: auto !important;   /* Annule la hauteur forcée qui déforme tout */
-  width: auto !important;    /* Laisse l'image utiliser sa vraie taille d'origine */
-  flex-shrink: 0;            /* Empêche absolument le header d'écraser l'image */
+  height: auto !important;
+  width: auto !important;
+  flex-shrink: 0;
   display: block;
+
+  /* Réduit la taille de l'image par 2 proprement sans lisser les pixels */
+  transform: scale(0.5); 
+  
+  /* Optionnel : Ajuste la marge si l'image te semble décalée après réduction */
+  margin-left: -10px; 
 }
 
 .header-title {
